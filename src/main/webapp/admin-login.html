@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Medicine Availability Finder</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 28px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #173b65;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 22px;
+            background: #173b65;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .note {
+            color: #555;
+            font-size: 13px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Admin Login</h2>
+        <p class="note">Medicine Availability Finder System</p>
+
+        <form action="admin-login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"
+                   required autocomplete="username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                   required autocomplete="current-password">
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

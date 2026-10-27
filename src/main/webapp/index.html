@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Availability Finder</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #243447;
+        }
+
+        header {
+            background: #087f8c;
+            color: white;
+            padding: 22px 8%;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 27px;
+        }
+
+        header p {
+            margin-bottom: 0;
+        }
+
+        .account-links {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .account-links a {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid white;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .account-links a:hover {
+            background: white;
+            color: #087f8c;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 45px auto;
+            padding: 20px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #00000012;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccd6dd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 13px 22px;
+            background: #087f8c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #06636d;
+        }
+
+        #message {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #657786;
+        }
+
+        @media (max-width: 500px) {
+            header {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            .search-box {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Medicine Availability Finder</h1>
+        <p>Find medicines at registered pharmacies near you.</p>
+
+        <nav class="account-links" aria-label="Account navigation">
+            <a href="customer-login.html">Customer Login</a>
+            <a href="customer-register.html">Customer Register</a>
+            <a href="owner-login.html">Pharmacy Owner Login</a>
+            <a href="owner-register">Pharmacy Owner Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-box">
+            <h2>Find Your Medicine</h2>
+            <p>Enter a medicine name and your city to get started.</p>
+
+            <form id="searchForm" action="search" method="get">
+                <label for="medicine">Medicine Name:</label>
+                <input
+                    type="text"
+                    id="medicine"
+                    name="medicine"
+                    placeholder="e.g. Paracetamol"
+                    required
+                >
+
+                <label for="city">City:</label>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="e.g. Ludhiana"
+                >
+
+                <button type="submit">Search Medicine</button>
+            </form>
+
+            <div id="message" role="status"></div>
+        </section>
+    </main>
+
+    <footer>
+        Medicine Availability Finder System
+    </footer>
+
+    <script>
+        const searchForm = document.getElementById("searchForm");
+
+        searchForm.addEventListener("submit", function(event) {
+            const medicine =
+                document.getElementById("medicine").value.trim();
+
+            if (!medicine) {
+                event.preventDefault();
+                document.getElementById("message").textContent =
+                    "Please enter a medicine name.";
+            }
+
+            // Valid searches continue to the existing /search servlet.
+            // Do not prevent the default submission: the database search
+            // is handled by the server.
+        });
+    </script>
+</body>
+</html>

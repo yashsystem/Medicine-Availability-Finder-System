@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Medicine Stock | Medicine Finder</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f6fc;
+            margin: 0;
+            padding: 30px 15px;
+            color: #263445;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px #d5deeb;
+        }
+
+        h2 {
+            text-align: center;
+            color: #174a8b;
+            margin-top: 0;
+        }
+
+        .note {
+            background: #eaf4ff;
+            color: #174a8b;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            font-weight: bold;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: 2px solid #8bbcf0;
+            border-color: #1769aa;
+        }
+
+        button {
+            background: #1769aa;
+            color: white;
+            border: none;
+            margin-top: 24px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #104b7c;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #1769aa;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <h2>Add Medicine Stock</h2>
+
+    <p class="note">
+        Your logged-in pharmacy will be selected automatically.
+        Enter the medicine details, available quantity and price.
+    </p>
+
+    <form action="add-stock" method="post">
+
+        <label for="name">Medicine Name</label>
+        <input type="text" id="name" name="name"
+               placeholder="e.g. Paracetamol"
+               maxlength="150" required>
+
+        <label for="strength">Strength</label>
+        <input type="text" id="strength" name="strength"
+               placeholder="e.g. 500 mg"
+               maxlength="50" required>
+
+        <label for="manufacturer">Manufacturer</label>
+        <input type="text" id="manufacturer" name="manufacturer"
+               placeholder="e.g. ABC Pharma"
+               maxlength="150">
+
+        <label for="quantity">Available Quantity</label>
+        <input type="number" id="quantity" name="quantity"
+               min="0" required>
+
+        <label for="price">Price (₹)</label>
+        <input type="number" id="price" name="price"
+               min="0" step="0.01" required>
+
+        <button type="submit">Save Medicine Stock</button>
+    </form>
+
+    <a class="back" href="owner-dashboard">Back to Owner Dashboard</a>
+
+</div>
+</body>
+</html>

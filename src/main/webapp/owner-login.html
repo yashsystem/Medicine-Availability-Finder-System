@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Owner Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f6fc;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #174a8b;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, button {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 22px;
+            background: #1769aa;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>Pharmacy Owner Login</h2>
+
+    <form action="owner-login" method="post">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email"
+               maxlength="150" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"
+               maxlength="72" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p><a href="owner-register.html">Create an owner account</a></p>
+    <p><a href="index.html">Back to Home</a></p>
+</div>
+</body>
+</html>

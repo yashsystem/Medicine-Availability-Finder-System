@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Medicine</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px 15px;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #243447;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 35px auto;
+            padding: 28px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #00000012;
+        }
+
+        h2 {
+            color: #087f8c;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin: 18px 0 8px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd6dd;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            background: #087f8c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #06636d;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 18px;
+            text-align: center;
+            color: #087f8c;
+        }
+
+        .note {
+            color: #657786;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Request a Medicine</h2>
+
+        <p class="note">
+            Could not find your medicine? Submit a request so the
+            availability can be checked.
+        </p>
+
+        <form action="medicine-request" method="post">
+
+            <label for="medicine_name">Medicine Name *</label>
+            <input
+                type="text"
+                id="medicine_name"
+                name="medicine_name"
+                maxlength="150"
+                placeholder="e.g. Paracetamol"
+                required
+            >
+
+            <label for="city">City *</label>
+            <input
+                type="text"
+                id="city"
+                name="city"
+                maxlength="100"
+                placeholder="e.g. Ludhiana"
+                required
+            >
+
+            <label for="additional_details">
+                Additional Details (Optional)
+            </label>
+
+            <textarea
+                id="additional_details"
+                name="additional_details"
+                maxlength="500"
+                rows="4"
+                placeholder="e.g. 500 mg strength or other details"
+            ></textarea>
+
+            <button type="submit">Submit Medicine Request</button>
+        </form>
+
+        <a class="back-link" href="customer-dashboard">
+            Back to Customer Dashboard
+        </a>
+
+        <a class="back-link" href="index.html">
+            Back to Medicine Search
+        </a>
+    </div>
+</body>
+</html>
